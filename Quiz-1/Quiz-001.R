@@ -1,4 +1,5 @@
-## Question 1 Quiz 1 - Course Getting and Cleaning Data - Coursera
+## Course Getting and Cleaning Data - Coursera
+## Question 1 Quiz 1
 if(!file.exists("data")) {dir.create("data")}
 fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FPUMSDataDict06.pdf"
 download.file(fileURL, destfile = "./data/PUMSDataDict06.pdf")
@@ -11,10 +12,10 @@ head(datahouse)
 sum(!is.na(datahouse$VAL[datahouse$VAL ==24]))
 53
 
-############################################## Question 2
+####################### Question 2
 datahouse <- read.table("./data/ss06hid.csv", sep = ",", header=TRUE)
 datahouse$FES
-## one variable per column
+## answer - one variable per column
 
 ######################## Question 3
 ## Question 3 Quiz 1
@@ -45,13 +46,6 @@ names(rootNode)
 sum(xpathSApply(rootNode, "//zipcode", xmlValue)==21231)
 127 
 
-### test de arquivos XML - file restaurants.xml n??o reconhecido como XML.
-library(XML)
-fileUrl <- "http://www.w3schools.com/xml/simple.xml"
-doc <- xmlTreeParse(fileUrl, useInternal = TRUE)
-rootNode <- xmlRoot(doc)
-names(rootNode)
-
 
 ################# Question 5
 if(!file.exists("data")) {dir.create("data")}
@@ -68,4 +62,4 @@ system.time(sapply(split(DT$pwgtp15,DT$SEX),mean))
 system.time(mean(DT$pwgtp15,by=DT$SEX))
 system.time(tapply(DT$pwgtp15,DT$SEX,mean))
 system.time(rowMeans(DT)[DT$SEX==1])+system.time(rowMeans(DT)[DT$SEX==2])
-
+## answer DT[,mean(pwgtp15),by=SEX]
