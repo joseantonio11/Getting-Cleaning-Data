@@ -24,6 +24,6 @@ You should create one R script called run_analysis.R that does the following.
 
 Explanation of contents:
 
-run_analysis.R: downloads all the required files to complete this assignment and creates a big file mean_and_std.csv and a small file tidy_dataset.csv (both are stored in /results)
+run_analysis.R: downloads all the required files to complete this assignment.
 
 CodeBook.md: it is a brief explanation of what run_analysis.R does
