@@ -56,18 +56,14 @@ There are 5 parts:
 
 5 - Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
+## Activity Labels
 
-# How ```run_analysis.R``` implements the above steps:
-
-1 - Load both test and train data.
-
-2 - Load the features and activity labels.
-
-3 - Extract the mean and standard deviation column names and data.
-
-4 - Process the data. There are two parts processing test and train data respectively.
-
-5 - Merge data set.
+* `WALKING` (value `1`): subject was walking during the test
+* `WALKING_UPSTAIRS` (value `2`): subject was walking up a staircase during the test
+* `WALKING_DOWNSTAIRS` (value `3`): subject was walking down a staircase during the test
+* `SITTING` (value `4`): subject was sitting during the test
+* `STANDING` (value `5`): subject was standing during the test
+* `LAYING` (value `6`): subject was laying down during the test
 
 # run_analysis.R 
 
@@ -87,8 +83,8 @@ There are 5 parts:
 * rearrange the data using id
 * loads activity_labels.txt
 * changes the data activity row to use the activity labels
-* saves the mean and std into dadoslimpos.csv
-* saves the tidy dataset into dadosmedios.csv
+* saves the mean and std into dadoslimpos.txt or dadoslimpos.csv
+* saves the tidy dataset into dadosmedios.txt or dadosmedios.csv
 
  
 
