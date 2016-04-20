@@ -58,29 +58,8 @@ There are 5 parts:
 * `STANDING` (value `5`): subject was standing during the test
 * `LAYING` (value `6`): subject was laying down during the test
 
-# run_analysis.R 
 
-* downloads required data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-* unzips the file if it has not been uncompressed
-* creates results folder if it does not exist (all files are stored in this folder)
-* loads features.txt used for columns
-* loads X_train.txt, y_train.txt, subject_train.txt
-* X_train contains the data using the feature data set as columns
-* y_train contains the activity labels
-* subject_train contains the ids
-* loads and appends test dataset using X_test.txt, y_test.txt, subject_test.txt
-* X_test contains the data using the feature data set as columns
-* y_test contains the activity labels
-* subject_test contains the ids
-* appends train and test data
-* rearrange the data using id
-* loads activity_labels.txt
-* changes the data activity row to use the activity labels
-* saves the mean and std into dadoslimpos.txt and dadosmedios.csv
-* saves the tidy dataset into dadosmedios.txt and dadosmedios.csv
-
- 
-# The attached R script (run_analysis.R) performs the following to clean up the data:
+# The script (run_analysis.R) performs the following to clean up the data:
 
 * Merges the training and test sets train/X_train.txt with test/X_test.txt which is a 10299x561 data frame.
 * Merges train/subject_train.txt with test/subject_test.txt, which is a 10299x1 data frame with subject IDs.
