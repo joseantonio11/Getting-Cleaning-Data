@@ -16,21 +16,14 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 
 The dataset includes the following files:
 
-'README.txt'
-
-'features_info.txt': Shows information about the variables used on the feature vector.
-
-'features.txt': List of all features.
-
-'activity_labels.txt': Links the class labels with their activity name.
-
-'train/X_train.txt': Training set.
-
-'train/y_train.txt': Training labels.
-
-'test/X_test.txt': Test set.
-
-'test/y_test.txt': Test labels.
+* 'README.txt'
+* 'features_info.txt': Shows information about the variables used on the feature vector.
+* 'features.txt': List of all features.
+* 'activity_labels.txt': Links the class labels with their activity name.
+* 'train/X_train.txt': Training set.
+* 'train/y_train.txt': Training labels.
+* 'test/X_test.txt': Test set.
+* 'test/y_test.txt': Test labels.
 
 The following files are available for the train and test data. Their descriptions are equivalent.
 
@@ -83,27 +76,19 @@ There are 5 parts:
 * rearrange the data using id
 * loads activity_labels.txt
 * changes the data activity row to use the activity labels
-* saves the mean and std into dadoslimpos.txt or dadoslimpos.csv
-* saves the tidy dataset into dadosmedios.txt or dadosmedios.csv
+* saves the mean and std into dadoslimpos.txt and dadosmedios.csv
+* saves the tidy dataset into dadosmedios.txt and dadosmedios.csv
 
- 
- 
  
 # The attached R script (run_analysis.R) performs the following to clean up the data:
 
-* Merges the training and test sets to create one data set, namely train/X_train.txt with test/X_test.txt, the result of which is a 10299x561 data frame, as in the original description ("Number of Instances: 10299" and "Number of Attributes: 561"), train/subject_train.txt with test/subject_test.txt, the result of which is a 10299x1 data frame with subject IDs, and train/y_train.txt with test/y_test.txt, the result of which is also a 10299x1 data frame with activity IDs.
-
-* Reads features.txt and extracts only the measurements on the mean and standard deviation for each measurement. The result is a 10299x66 data frame, because only 66 out of 561 attributes are measurements on the mean and standard deviation. All measurements appear to be floating point numbers in the range (-1, 1).
-
-* Reads activity_labels.txt and applies descriptive activity names to name the activities in the data set:
-
-        walking / walkingupstairs / walkingdownstairs / sitting / standing / laying
-
-* The script also appropriately labels the data set with descriptive names: all feature names (attributes) and activity names are converted to lower case, underscores and brackets () are removed. Then it merges the 10299x66 data frame containing features with 10299x1 data frames containing activity labels and subject IDs. The result is saved as dadoslimpos.txt, a 10299x68 data frame such that the first column contains subject IDs, the second column activity names, and the last 66 columns are measurements. Subject IDs are integers between 1 and 30 inclusive. The names of the attributes are similar to the following:
-
-        tbodyacc-mean-x / tbodyacc-mean-y / tbodyacc-mean-z / tbodyacc-std-x / tbodyacc-std-y / tbodyacc-std-z / tgravityacc-mean-x / tgravityacc-mean-y
-
-* Finally, the script creates a 2nd, independent tidy data set with the average of each measurement for each activity and each subject. The result is saved as dadosmedios.txt, a 180x68 data frame, where as before, the first column contains subject IDs, the second column contains activity names (see below), and then the averages for each of the 66 attributes are in columns 3...68. There are 30 subjects and 6 activities, thus 180 rows in this data set with averages.
+* Merges the training and test sets train/X_train.txt with test/X_test.txt which is a 10299x561 data frame.
+* Merges train/subject_train.txt with test/subject_test.txt, which is a 10299x1 data frame with subject IDs.
+* Merges train/y_train.txt with test/y_test.txt, the result of which is also a 10299x1 data frame with activity IDs.
+* Reads features.txt and extracts only the measurements on the mean and standard deviation for each measurement which is a 10299x66 data frame.
+* Reads activity_labels.txt and applies descriptive activity names to name the activities in the data set (walking, walkingupstairs, walkingdownstairs, sitting, standing, laying)
+* The script labels the data set with descriptive and lower case names. It merges the 10299x66 data frame containing features with 10299x1 data frames containing activity labels and subject IDs. The result is saved as dadoslimpos.txt, a 10299x68 data frame such that the first column contains subject IDs, the second column activity names, and the last 66 columns are measurements. The names of the attributes are similar to tbodyacc-mean-x, tbodyacc-mean-y, tbodyacc-mean-z, tbodyacc-std-x, tbodyacc-std-y, tbodyacc-std-z, tgravityacc-mean-x, tgravityacc-mean-y.
+* The final script creates a 2nd, independent tidy data set with the average of each measurement for each activity and each subject. The result is saved as dadosmedios.txt, a 180x68 data frame, where as before, the first column contains subject IDs, the second column contains activity names and then the averages for each of the 66 attributes are in columns 3...68. There are 30 subjects and 6 activities, thus 180 rows in this data set with averages.
 
 
 
