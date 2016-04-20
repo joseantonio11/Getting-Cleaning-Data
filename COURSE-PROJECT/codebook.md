@@ -57,7 +57,7 @@ There are 5 parts:
 5 - Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 
-How run_analysis.R implements the above steps:
+# How run_analysis.R implements the above steps:
 
 1 - Require reshapre2 and data.table librareis.
 
