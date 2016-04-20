@@ -57,9 +57,9 @@ There are 5 parts:
 5 - Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 
-# How run_analysis.R implements the above steps:
+# How ```run_analysis.R``` implements the above steps:
 
-1 - Require reshapre2 and data.table librareis.
+1 - Require ```reshapre2``` and ```data.table``` librareis.
 
 2 - Load both test and train data.
 
@@ -67,9 +67,11 @@ There are 5 parts:
 
 4 - Extract the mean and standard deviation column names and data.
 
-5 = Process the data. There are two parts processing test and train data respectively.
+5 - Process the data. There are two parts processing test and train data respectively.
 
 6 - Merge data set.
+
+# 
 
 
 
