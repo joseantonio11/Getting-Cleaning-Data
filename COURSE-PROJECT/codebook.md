@@ -49,7 +49,7 @@ There are 5 parts:
 
 5 - Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-## Activity Labels
+# Activity Labels
 
 * `WALKING` (value `1`): subject was walking during the test
 * `WALKING_UPSTAIRS` (value `2`): subject was walking up a staircase during the test
@@ -58,6 +58,10 @@ There are 5 parts:
 * `STANDING` (value `5`): subject was standing during the test
 * `LAYING` (value `6`): subject was laying down during the test
 
+## Identifiers
+
+* `subject` - The ID of the test subject
+* `activity` - The type of activity performed when the corresponding measurements were taken
 
 # The script (run_analysis.R) performs the following to clean up the data:
 
