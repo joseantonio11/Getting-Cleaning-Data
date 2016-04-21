@@ -1,7 +1,15 @@
 # Getting and Cleaning Data - Course Project
 
-This is the course project for the Getting and Cleaning Data Coursera course.
-The R script, `run_analysis.R`, does the following:
+Repo for the submission of the course project for the Johns Hopkins Getting and Cleaning Data course.
+# Overview
+This project serves to demonstrate the collection and cleaning of a tidy data set that can be used for subsequent
+analysis. A full description of the data used in this project can be found at [The UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+
+
+### Project Summary
+The following is a summary description of the project instructions
+
+You should create one R script called `run_analysis.R` that does the following. 
 
 1. Download the dataset if it does not already exist in the working directory
 2. Load the activity and feature info
