@@ -35,7 +35,7 @@ The dataset includes the following files:
 
 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
 
-# Transformation details
+# Project Summary:
 
 There are 5 parts:
 
