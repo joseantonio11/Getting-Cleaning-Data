@@ -82,6 +82,12 @@ There are 5 parts:
 * `fBodyBodyGyroMagMean` / `fBodyBodyGyroMagStd` / `fBodyBodyGyroMagMeanFreq` / `fBodyBodyGyroJerkMagMean`
 * `fBodyBodyGyroJerkMagStd` / `fBodyBodyGyroJerkMagMeanFreq`
 
+# Set of variables estimated from the signals are: 
+
+* mean(): Mean value
+* std(): Standard deviation
+
+
 # run_analysis.R performs the steps:
 
 * Merges the training and test sets train/X_train.txt with test/X_test.txt which is a 10299x561 data frame.
