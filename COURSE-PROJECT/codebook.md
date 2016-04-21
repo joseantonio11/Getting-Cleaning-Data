@@ -58,12 +58,12 @@ There are 5 parts:
 * `STANDING` (value `5`): subject was standing during the test
 * `LAYING` (value `6`): subject was laying down during the test
 
-## Identifiers
+# Identifiers
 
 * `subject` - The ID of the test subject
 * `activity` - The type of activity performed when the corresponding measurements were taken
 
-# The script (run_analysis.R) performs the following to clean up the data:
+# run_analysis.R performs the steps to clean up the data:
 
 * Merges the training and test sets train/X_train.txt with test/X_test.txt which is a 10299x561 data frame.
 * Merges train/subject_train.txt with test/subject_test.txt, which is a 10299x1 data frame with subject IDs.
