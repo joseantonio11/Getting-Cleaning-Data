@@ -1,6 +1,6 @@
 # CodeBook
 
-This is a code book describes variables, data, and  transformations or work that you performed to clean up the data.
+This code book describes the logic, data, variables and work performed to clean up the data.
 
 # The data source
 
@@ -82,15 +82,17 @@ There are 5 parts:
 * `fBodyBodyGyroMagMean` / `fBodyBodyGyroMagStd` / `fBodyBodyGyroMagMeanFreq` / `fBodyBodyGyroJerkMagMean`
 * `fBodyBodyGyroJerkMagStd` / `fBodyBodyGyroJerkMagMeanFreq`
 
-# run_analysis.R performs the steps to clean up the data:
+# run_analysis.R performs the steps:
 
 * Merges the training and test sets train/X_train.txt with test/X_test.txt which is a 10299x561 data frame.
 * Merges train/subject_train.txt with test/subject_test.txt, which is a 10299x1 data frame with subject IDs.
 * Merges train/y_train.txt with test/y_test.txt, the result of which is also a 10299x1 data frame with activity IDs.
 * Reads features.txt and extracts only the measurements on the mean and standard deviation for each measurement which is a 10299x66 data frame.
 * Reads activity_labels.txt and applies descriptive activity names to name the activities in the data set (walking, walkingupstairs, walkingdownstairs, sitting, standing, laying)
-* The script labels the data set with descriptive and lower case names. It merges the 10299x66 data frame containing features with 10299x1 data frames containing activity labels and subject IDs. The result is saved as dadoslimpos.txt, a 10299x68 data frame such that the first column contains subject IDs, the second column activity names, and the last 66 columns are measurements. The names of the attributes are similar to tbodyacc-mean-x, tbodyacc-mean-y, tbodyacc-mean-z, tbodyacc-std-x, tbodyacc-std-y, tbodyacc-std-z, tgravityacc-mean-x, tgravityacc-mean-y.
+* The script labels the data set with descriptive names. Merges 10299x66 data frame containing features with 10299x1 data frames containing activity labels and subject IDs. The result saved as `dadoslimpos.txt`, a 10299x68 data frame such that the first column contains subject IDs, the second column activity names, and the last 66 columns are measurements.
 * The final script creates a 2nd, independent tidy data set with the average of each measurement for each activity and each subject. The result is saved as dadosmedios.txt, a 180x68 data frame, where as before, the first column contains subject IDs, the second column contains activity names and then the averages for each of the 66 attributes are in columns 3...68. There are 30 subjects and 6 activities, thus 180 rows in this data set with averages.
+
+
 
 
 
