@@ -50,18 +50,13 @@ write.csv(dadoslimpos, "./results/dadoslimpos.csv")
 
 ## 5 - From the data set in step 4, creates a second, independent tidy data set with the average of each variable 
 ## for each activity and each subject.
-uniqueS = unique(alldata2)[,1]; numS = length(unique(alldata2)[,1]); numA = length(nomesativos[,1]); numC = dim(dadoslimpos)[2]
-result = dadoslimpos[1:(numS*numA), ]; linha = 1
-for (s in 1:numS) {
-  for (a in 1:numA) {
-    result[linha, 1] = uniqueS[s]
-    result[linha, 2] = nomesativos[a, 2]
-    tmp <- dadoslimpos[dadoslimpos$subject==s & dadoslimpos$activity==nomesativos[a, 2], ]
-    result[linha, 3:numC] <- colMeans(tmp[, 3:numC])
-    linha = linha+1}}
-write.table(result, "./results/dadosmedios.txt")
-dadosmedios <- read.table("./results/dadosmedios.txt", sep = "")
-write.csv(dadosmedios, "./results/dadosmedios.csv")
+library(reshape2)
+alldata <- melt(dadoslimpos, id = c("subject", "activity"))
+dadosmedios <- dcast(alldata, subject + activity ~ variable, mean)
+write.table(dadosmedios, "./results/dadosmedios.txt", row.name=FALSE)
+write.csv(dadosmedios, "./results/dadosmedios1.csv")
+
+
 
 
 
