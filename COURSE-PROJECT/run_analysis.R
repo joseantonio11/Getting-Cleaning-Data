@@ -1,4 +1,4 @@
-## Project - Getting and Cleanind Data - Coursera
+ ## Project - Getting and Cleanind Data - Coursera
 
 setwd("/Users/JoseAntonio/Desktop/COURSERA")
 library(httr)
@@ -47,26 +47,29 @@ names(alldata2) <- "subject"
 dadoslimpos <- cbind(alldata2, alldata3, alldata1)
 write.table(dadoslimpos, "./results/dadoslimpos.txt")
 write.csv(dadoslimpos, "./results/dadoslimpos.csv")
-dadoslimpos <- read.csv("./results/dadoslimpos.csv")
 
 ## 5 - From the data set in step 4, creates a second, independent tidy data set with the average of each variable 
 ## for each activity and each subject.
-uniqueS = unique(alldata2)[,1]; numS = length(unique(alldata2)[,1]); numA = length(nomesativos[,1]); numC = dim(cleaned)[2]
-result = cleaned[1:(numS*numA), ]
+uniqueSubjects = unique(alldata2)[,1]
+numSubjects = length(unique(alldata2)[,1])
+numActivities = length(nomesativos[,1])
+numCols = dim(dadoslimpos)[2]
+result = dadoslimpos[1:(numSubjects*numActivities), ]
 row = 1
-for (s in 1:numS) {
-  for (a in 1:numA) {
-    result[row, 1] = uniqueS[s]
+for (s in 1:numSubjects) {
+  for (a in 1:numActivities) {
+    result[row, 1] = uniqueSubjects[s]
     result[row, 2] = nomesativos[a, 2]
-    tmp <- cleaned[cleaned$subject==s & cleaned$activity==nomesativos[a, 2], ]
-    result[row, 3:numC] <- colMeans(tmp[, 3:numC])
+    tmp <- dadoslimpos[dadoslimpos$subject==s & dadoslimpos$activity==nomesativos[a, 2], ]
+    result[row, 3:numCols] <- colMeans(tmp[, 3:numCols])
     row = row+1
   }
 }
 write.table(result, "./results/dadosmedios.txt")
 dadosmedios <- read.table("./results/dadosmedios.txt", sep = "")
 write.csv(dadosmedios, "./results/dadosmedios.csv")
-dadosmedios <- read.csv("./results/dadosmedios.csv")
+
+
 
 
 
