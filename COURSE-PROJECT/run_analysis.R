@@ -52,22 +52,22 @@ write.csv(dadoslimpos, "./results/dadoslimpos.csv")
 ## for each activity and each subject.
 uniqueS = unique(alldata2)[,1]
 numS = length(unique(alldata2)[,1])
-numActivities = length(nomesativos[,1])
-numCols = dim(dadoslimpos)[2]
-result = dadoslimpos[1:(numS*numActivities), ]
+numA = length(nomesativos[,1])
+numC = dim(dadoslimpos)[2]
+result = dadoslimpos[1:(numS*numA), ]
 row = 1
 for (s in 1:numS) {
-  for (a in 1:numActivities) {
+  for (a in 1:numA) {
     result[row, 1] = uniqueS[s]
     result[row, 2] = nomesativos[a, 2]
     tmp <- dadoslimpos[dadoslimpos$subject==s & dadoslimpos$activity==nomesativos[a, 2], ]
-    result[row, 3:numCols] <- colMeans(tmp[, 3:numCols])
+    result[row, 3:numC] <- colMeans(tmp[, 3:numC])
     row = row+1
   }
 }
 write.table(result, "./results/dadosmedios.txt")
 dadosmedios <- read.table("./results/dadosmedios.txt", sep = "")
-write.csv(dadosmedios, "./results/dadosmedios.csv"
+write.csv(dadosmedios, "./results/dadosmedios.csv")
 
 
 
