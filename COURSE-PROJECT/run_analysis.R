@@ -1,4 +1,4 @@
- ## Project - Getting and Cleanind Data - Coursera
+## Project - Getting and Cleanind Data - Coursera
 
 setwd("/Users/JoseAntonio/Desktop/COURSERA")
 library(httr)
@@ -27,20 +27,20 @@ alldata2 <- rbind(train2,test2)
 train3 <- read.table("UCI HAR Dataset/train/y_train.txt")
 test3 <- read.table("UCI HAR Dataset/test/y_test.txt")
 alldata3 <- rbind(train3, test3)
+## reading data features and activity labels
+features <- read.table("UCI HAR Dataset/features.txt") # 2 measruments
+nomesativos <- read.table("UCI HAR Dataset/activity_labels.txt") # 3 activity names
 
 ## 2 - Extracts only the measurements on the mean and standard deviation for each measurement.
-features <- read.table("UCI HAR Dataset/features.txt")
 indices <- grep("-mean\\(\\)|-std\\(\\)", features[, 2])
 alldata1 <- alldata1[, indices]
 names(alldata1) <- features[indices, 2]; names(alldata1) <- gsub("\\(|\\)", "", names(alldata1))
 names(alldata1) <- tolower(names(alldata1))
 
 ## 3 - Uses descriptive activity names to name the activities in the data set.
-nomesativos <- read.table("UCI HAR Dataset/activity_labels.txt")
 nomesativos[, 2] = gsub("_", "", tolower(as.character(nomesativos[, 2])))
 alldata3[,1] = nomesativos[alldata3[,1], 2]
 names(alldata3) <- "activity"
-
 
 ## 4 - Appropriately labels the data set with descriptive variable names.
 names(alldata2) <- "subject"
